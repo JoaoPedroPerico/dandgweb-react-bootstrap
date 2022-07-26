@@ -1,0 +1,91 @@
+  .mesa {
+      display: flex;
+      justify-content: center;
+      perspective: 500px;
+      margin-top: 100px;
+  }
+
+  .cubo {
+      width: 200px;
+      height: 200px;
+      transform-style: preserve-3d;
+      animation-delay: 3s;
+      animation: rodarCubo 15s infinite alternate;
+  }
+
+  .cubo div {
+      background: hsla(0, 80%, 40%, 0.7);
+      display: flex;
+      border: 2px solid black;
+      width: 200px;
+      height: 200px;
+      position: absolute;
+
+      align-items: center;
+      justify-content: center;
+      font-size: 300%;
+  }
+
+  .cubo .cubo_face--1 {
+      transform:
+          translateZ(100px);
+  }
+
+  .cubo .cubo_face--2 {
+      transform:
+          rotateX(-180deg) translateZ(100px);
+  }
+
+  .cubo .cubo_face--3 {
+      transform:
+          rotateY(90deg) translateZ(100px);
+  }
+
+  .cubo .cubo_face--4 {
+      transform:
+          rotateY(-90deg) translateZ(100px);
+  }
+
+  .cubo .cubo_face--5 {
+      transform:
+          rotateX(90deg) translateZ(100px);
+  }
+
+  .cubo .cubo_face--6 {
+      transform:
+          rotateX(-90deg) translateZ(100px);
+  }
+
+  @keyframes rodarCubo {
+      from {
+          transform: rotateX(-20deg) rotateY(-20deg);
+      }
+
+      14% {
+          transform: rotateX(-20deg) rotateY(-20deg);
+      }
+
+      28% {
+          transform: rotateX(180deg) rotateY(-15deg);
+      }
+
+      42% {
+          transform: rotateX(-20deg) rotateY(-110deg);
+      }
+
+      56% {
+          transform: rotateX(-20deg) rotateY(70deg);
+      }
+
+      70% {
+          transform: rotateX(-110deg) rotateY(-20deg);
+      }
+
+      84% {
+          transform: rotateX(70deg) rotateY(-20deg);
+      }
+
+      to {
+          transform: rotateX(-20deg) rotateY(-20deg);
+      }
+  }
